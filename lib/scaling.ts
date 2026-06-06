@@ -88,8 +88,18 @@ export function scaledServings(recipe: Recipe, factor: number): number {
   return Math.round(raw * 2) / 2;
 }
 
-export function formatAmount(amount: number | null, unit: string | null): string {
-  if (amount == null) return 'to taste';
+const AS_NEEDED_NAMES = ['oil', 'spray', 'cooking spray', 'butter', 'pam'];
+
+export function formatAmount(
+  amount: number | null,
+  unit: string | null,
+  name?: string
+): string {
+  if (amount == null) {
+    const lname = (name || '').toLowerCase();
+    if (AS_NEEDED_NAMES.some((k) => lname.includes(k))) return 'as needed';
+    return 'to taste';
+  }
   const u = unit ? ` ${unit}` : '';
   return `${smartRound(amount)}${u}`;
 }

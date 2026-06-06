@@ -219,7 +219,7 @@ function RecipeDetail() {
                 </span>
               </div>
               <p className="hint" style={{ marginTop: 10 }}>
-                Recipe is written for {formatAmount(toDisplayUnit(anchor.amount), displayUnit)}. Everything below rescales live.
+                Recipe is written for {formatAmount(toDisplayUnit(anchor.amount), displayUnit, anchor.name)}. Everything below rescales live.
               </p>
               <div className="quick-btns">
                 {anchor.amount != null &&
@@ -312,7 +312,7 @@ function RecipeDetail() {
                       {ing.note && <span className="inote"> — {ing.note}</span>}
                     </span>
                     <span className="iamt">
-                      {formatAmount(ing.amount, ing.unit)}
+                      {formatAmount(ing.amount, ing.unit, ing.name)}
                       {conv && <span className="conv">≈ {conv}</span>}
                     </span>
                   </li>
