@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/edgar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/43acab04-8f6a-4332-85d1-e0e3c33ff6d9/abca91e8-5840-4f56-88b9-816e0ee7ab2d/skills/docx/**)",
+      "Bash(python scripts/office/unpack.py \"C:\\\\Users\\\\edgar\\\\Downloads\\\\meal-prep-handoff.docx\" unpacked_handoff/)"
+    ]
+  }
+}
